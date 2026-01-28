@@ -1,0 +1,338 @@
+:root {
+    --primary-color: #e67e22;
+    --bg-color: #f5f6f7;
+    --white: #ffffff;
+    --success-color: #27ae60;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex: 0 0 50%;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+}
+
+.search-bar button {
+    background: #d35400;
+    border: none;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 25px;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+/* Layout Main */
+.main-content {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.balance-card, .menu-categories {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.balance-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.topup-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.menu-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-categories li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-categories li a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+    display: block;
+}
+
+.menu-categories li a:hover { color: var(--primary-color); }
+
+/* Products Area */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: contain; 
+    background-color: #f9f9f9; 
+    padding: 10px;
+}
+
+.card-body {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.add-to-cart-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.sorting-options {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sorting-options select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #d35400;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Modal Top Up */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center; justify-content: center;
+}
+
+.modal-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modal-box h2 { 
+    color: #333; margin-top: 0; 
+    border-bottom: 2px solid var(--primary-color); 
+    padding-bottom: 10px; 
+}
+
+.nominal-selector {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;
+}
+
+.nominal-btn {
+    border: 1px solid #ddd; padding: 12px; text-align: center;
+    border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s;
+}
+
+.nominal-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+.nominal-btn.active { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+
+.form-input {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    border: 1px solid #ddd; border-radius: 6px; outline: none; box-sizing: border-box;
+}
+
+.btn-confirm {
+    width: 100%; background: var(--success-color); color: white; border: none;
+    padding: 15px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem;
+}
+
+.btn-cancel {
+    width: 100%; background: none; border: none; color: #777; margin-top: 10px; cursor: pointer;
+}
+
+.va-display {
+    background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;
+    border: 1px dashed var(--primary-color);
+}
+
+/* Media Query untuk Handphone/Tablet */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .nav-container {
+        flex-direction: column; 
+        gap: 15px;
+        text-align: center;
+    }
+
+    .search-bar {
+        width: 100%; 
+        flex: unset;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+        gap: 15px;
+    }
+
+    .sidebar {
+        order: -1; /
+    }
+
+    .card img {
+        height: 150px; 
+    }
+}
+
+/* --- RESPONSIVE DESIGN UNTUK RIWAYAT PESANAN --- */
+
+@media (max-width: 600px) {
+    .container-pesanan {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    /* Membuat header judul dan tombol kembali bertumpuk */
+    .container-pesanan > div:first-child {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .container-pesanan h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Membuat isi kartu pesanan menjadi flex vertikal */
+    .pesanan-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .status-bayar {
+        align-self: flex-start;
+        padding: 4px 8px;
+        background: #e8f5e9; /* Memberi latar hijau tipis agar lebih jelas di HP */
+        border-radius: 4px;
+    }
+
+    /* Bagian bawah kartu (Metode & Total Harga) menjadi vertikal */
+    .pesanan-card > div:last-child {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .pesanan-card h3 {
+        font-size: 1.1rem;
+        align-self: flex-end; /* Harga tetap di kanan bawah agar rapi */
+    }
+}

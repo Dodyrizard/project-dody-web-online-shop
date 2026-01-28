@@ -1,0 +1,196 @@
+/* ==== RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff5f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ==== FRAME HP ==== */
+.phone-frame {
+  width: 360px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: pop 0.6s ease-in-out;
+}
+
+/* ==== HEADER ==== */
+.header {
+  background: linear-gradient(180deg, #f57c00, #e65100);
+  color: white;
+  text-align: center;
+  padding: 30px 10px 20px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.header .logo {
+  width: 80px;                
+  height: 80px;
+  object-fit: contain;        
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15); 
+  margin-bottom: 10px;        
+}
+
+.header h1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ==== LOGIN BOX ==== */
+.login-box {
+  padding: 25px;
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d35400;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #e67e22;
+  transform: scale(1.03);
+}
+
+/* ==== TEKS TAMBAHAN ==== */
+.forgot {
+  display: block;
+  margin: 10px 0;
+  color: #888;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 15px 0;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* ==== LOGIN SOSIAL ==== */
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.social-login button {
+  width: 48%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fb { background-color: #3b5998; }
+.google { background-color: #db4437; }
+
+.social-login button:hover {
+  opacity: 0.9;
+}
+
+/* ==== REGISTER ==== */
+.register {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* ==== FOOTER IMAGE ==== */
+.footer-image {
+  text-align: left;     
+  padding: 10px 20px;   
+  background: #ffffff;
+}
+
+.footer-image img {
+  width: 100px;
+  height: auto;
+  opacity: 0.95;
+  transition: 0.3s ease;
+}
+
+/* ==== ANIMASI ==== */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+@keyframes slideDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease forwards;
+}
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Pastikan wrapper tidak merusak layout */
+.password-wrapper {
+    display: block;
+    width: 100%;
+}
+
+/* Pastikan input password di dalam wrapper tetap lebar penuh */
+.password-wrapper input {
+    box-sizing: border-box; /* Agar padding tidak melebarkan input */
+}
+
+/* Warna saat ikon mata di-hover */
+#togglePassword:hover {
+    color: #d35400 !important;
+}
